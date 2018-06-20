@@ -19,7 +19,7 @@ namespace Garage2._6.Controllers
 
             return View();
         }
-
+         
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
