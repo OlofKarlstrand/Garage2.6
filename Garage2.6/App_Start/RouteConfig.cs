@@ -16,7 +16,7 @@ namespace Garage2._6
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "ParkedVehicles", action = "Overview", id = UrlParameter.Optional }
             );
         }
     }
