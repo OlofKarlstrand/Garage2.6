@@ -19,9 +19,11 @@ namespace Garage2._6.Models
         public string Color { get; set; }
         [DisplayName ("Number of Engines")]
         public int NumberofEngines { get; set; }
-        public string Type { get; set; }
+        //public string Type { get; set; }
+        [UIHint("DateFormat")]
         [DisplayName ("Time Checked In")]
         public DateTime CheckIn { get; set; }
+        [DisplayName("Type of Vehicle")]
         public VehicleType DropType { get; set; }
 
         

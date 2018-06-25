@@ -1,11 +1,8 @@
 ﻿@model Garage2._6.Models.ParkedVehicle
 
-@{
-    ViewBag.Title = "Details";
-}
 
+<br />
 <h2>Details</h2>
-
 <div>
     <h4>ParkedVehicle</h4>
     <hr />
@@ -17,9 +14,9 @@
         <dd>
             @Html.DisplayFor(model => model.RegNr)
         </dd>
-        <dt>@Html.DisplayNameFor(model => model.Type)</dt>
+        <dt>@Html.DisplayNameFor(model => model.DropType)</dt>
 
-        <dd>@Html.DisplayFor(model=>model.Type)</dd>
+        <dd>@Html.DisplayFor(model=>model.DropType)</dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Description)

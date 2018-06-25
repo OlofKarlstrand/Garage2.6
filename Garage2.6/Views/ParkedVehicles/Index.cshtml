@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Garage2._6.Models.ParkedVehicle>
 
-
+<br />
 <h2>Full Index</h2>
 
 <p>
@@ -14,15 +14,16 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
+      
         <th>
             @Html.DisplayNameFor(model => model.Color)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NumberofEngines)
         </th>
-        <th>@Html.DisplayNameFor(model => model.DropType)</th>
+        
 
-        <th>@Html.DisplayNameFor(model => model.Type)</th>
+        <th>@Html.DisplayNameFor(model => model.DropType)</th>
         <th>
             @Html.DisplayNameFor(model => model.CheckIn)
         </th>
@@ -43,8 +44,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.NumberofEngines)
         </td>
-        <td>@Html.DisplayFor(modelItem => item.DropType)</td>
-        <td>@Html.DisplayFor(modelItem=> item.Type)</td>
+        
+        <td>@Html.DisplayFor(modelItem=> item.DropType)</td>
         <td>
             @Html.DisplayFor(modelItem => item.CheckIn)
         </td>

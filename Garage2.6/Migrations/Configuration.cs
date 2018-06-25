@@ -30,17 +30,20 @@ namespace Garage2._6.Migrations
                     Color = "Purple",
                     NumberofEngines = 20,
                     CheckIn = DateTime.Now,
-                    Type = "Space Station"
+                    DropType = Models.VehicleType.Spacestation,
+
+
 
                 },
                 new Models.ParkedVehicle
                 {
+
                     RegNr = "LKJ345",
                     Description = "Thunderbird 4",
                     Color = "Yellow",
-                    NumberofEngines = 4,
+                    NumberofEngines = 8,
                     CheckIn = DateTime.Now,
-                    Type = "Submarine"
+                    DropType = Models.VehicleType.Submarine,
                 },
                 new Models.ParkedVehicle
                 {
@@ -49,7 +52,7 @@ namespace Garage2._6.Migrations
                     Color = "Green",
                     NumberofEngines = 12,
                     CheckIn = DateTime.Now,
-                    Type = "Spaceship"
+                    DropType = Models.VehicleType.Spaceship,
                 },
 
                 new Models.ParkedVehicle
@@ -57,9 +60,9 @@ namespace Garage2._6.Migrations
                     RegNr = "TYU935",
                     Description = "Thunderbird 2",
                     Color = "Blue",
-                    NumberofEngines = 4,
+                    NumberofEngines = 8,
                     CheckIn = DateTime.Now,
-                    Type = "AircraftTransporter"
+                    DropType = Models.VehicleType.AircraftTransporter,
                 },
                 new Models.ParkedVehicle
                 {
@@ -68,10 +71,10 @@ namespace Garage2._6.Migrations
                     Color = "Black",
                     NumberofEngines = 4,
                     CheckIn = DateTime.Now,
-                    Type = "Rocketplane"
+                    DropType = Models.VehicleType.Rocketplane,
                 }
                 );
-                context.SaveChanges();
+            context.SaveChanges();
         }
     }
 }

@@ -181,9 +181,63 @@
     <Compile Include="Migrations\201806241213539_park.Designer.cs">
       <DependentUpon>201806241213539_park.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806241403020_droptype.cs" />
+    <Compile Include="Migrations\201806241403020_droptype.Designer.cs">
+      <DependentUpon>201806241403020_droptype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241408348_checkintime.cs" />
+    <Compile Include="Migrations\201806241408348_checkintime.Designer.cs">
+      <DependentUpon>201806241408348_checkintime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241413548_checkin2.cs" />
+    <Compile Include="Migrations\201806241413548_checkin2.Designer.cs">
+      <DependentUpon>201806241413548_checkin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806241419027_next.cs" />
+    <Compile Include="Migrations\201806241419027_next.Designer.cs">
+      <DependentUpon>201806241419027_next.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806250910156_search.cs" />
+    <Compile Include="Migrations\201806250910156_search.Designer.cs">
+      <DependentUpon>201806250910156_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251428185_receipt.cs" />
+    <Compile Include="Migrations\201806251428185_receipt.Designer.cs">
+      <DependentUpon>201806251428185_receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251517427_receipt2.cs" />
+    <Compile Include="Migrations\201806251517427_receipt2.Designer.cs">
+      <DependentUpon>201806251517427_receipt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251519047_receipt3.cs" />
+    <Compile Include="Migrations\201806251519047_receipt3.Designer.cs">
+      <DependentUpon>201806251519047_receipt3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251534140_view.cs" />
+    <Compile Include="Migrations\201806251534140_view.Designer.cs">
+      <DependentUpon>201806251534140_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251539312_desc.cs" />
+    <Compile Include="Migrations\201806251539312_desc.Designer.cs">
+      <DependentUpon>201806251539312_desc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251540256_colo.cs" />
+    <Compile Include="Migrations\201806251540256_colo.Designer.cs">
+      <DependentUpon>201806251540256_colo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251541079_noe.cs" />
+    <Compile Include="Migrations\201806251541079_noe.Designer.cs">
+      <DependentUpon>201806251541079_noe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251657174_co.cs" />
+    <Compile Include="Migrations\201806251657174_co.Designer.cs">
+      <DependentUpon>201806251657174_co.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CheckOutVehicle.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
+    <Compile Include="Models\ReceiptViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,15 +274,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ParkedVehicles\Delete.cshtml" />
     <Content Include="Views\ParkedVehicles\Details.cshtml" />
-    <Content Include="Views\ParkedVehicles\Edit.cshtml" />
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\Overview.cshtml" />
     <Content Include="Views\ParkedVehicles\Park.cshtml" />
+    <Content Include="Views\ParkedVehicles\CheckOut.cshtml" />
+    <Content Include="Views\ParkedVehicles\VehicleReceipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -267,6 +319,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806241213539_park.resx">
       <DependentUpon>201806241213539_park.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241403020_droptype.resx">
+      <DependentUpon>201806241403020_droptype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241408348_checkintime.resx">
+      <DependentUpon>201806241408348_checkintime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241413548_checkin2.resx">
+      <DependentUpon>201806241413548_checkin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806241419027_next.resx">
+      <DependentUpon>201806241419027_next.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806250910156_search.resx">
+      <DependentUpon>201806250910156_search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251428185_receipt.resx">
+      <DependentUpon>201806251428185_receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251517427_receipt2.resx">
+      <DependentUpon>201806251517427_receipt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251519047_receipt3.resx">
+      <DependentUpon>201806251519047_receipt3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251534140_view.resx">
+      <DependentUpon>201806251534140_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251539312_desc.resx">
+      <DependentUpon>201806251539312_desc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251540256_colo.resx">
+      <DependentUpon>201806251540256_colo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251541079_noe.resx">
+      <DependentUpon>201806251541079_noe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251657174_co.resx">
+      <DependentUpon>201806251657174_co.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

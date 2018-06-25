@@ -15,14 +15,36 @@ namespace Garage2._6.Models
         private GarageContext db = new GarageContext();
 
         // GET: ParkedVehicles
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.ParkedVehicles.ToList());
+            var parkedVehicle = db.ParkedVehicles.ToList();
+
+            //if (sortOrder == "Ascending")
+            //{
+            //    parkedVehicle = parkedVehicle.OrderBy(s => s.Description).ToList();
+            //}
+
+            //else if (sortOrder == "Descending")
+            //{
+            //    parkedVehicle = parkedVehicle.OrderByDescending(s => s.Description).ToList();
+            //}
+
+            //List<ParkedVehicle> iv = new List<ParkedVehicle>();
+
+            //foreach (ParkedVehicle s in parkedVehicle)
+
+            //{
+            //    db.ParkedVehicles.OrderBy(ParkedVehicle => s.RegNr).ToList(); 
+            //}
+
+            return View(parkedVehicle.ToList());
         }
+
         public ActionResult Overview()
         {
             return View(db.ParkedVehicles.ToList());
         }
+
 
         // GET: ParkedVehicles/Details/5
         public ActionResult Details(int? id)
@@ -50,8 +72,8 @@ namespace Garage2._6.Models
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Park([Bind(Include = "RegNr,Kind,Color,NumberofEngines,Type,CheckIn,DropType")] ParkedVehicle parkedVehicle)
-        {         
+        public ActionResult Park([Bind(Include = "RegNr,Description,Color,NumberofEngines,CheckIn,DropType")] ParkedVehicle parkedVehicle)
+        {
 
             ParkedVehicle vehicle = new ParkedVehicle()
 
@@ -60,10 +82,10 @@ namespace Garage2._6.Models
                 Description = parkedVehicle.Description,
                 Color = parkedVehicle.Color,
                 NumberofEngines = parkedVehicle.NumberofEngines,
-                Type = parkedVehicle.Type,
                 CheckIn = DateTime.Now,
-                
-                
+                DropType = parkedVehicle.DropType,
+
+
 
             };
 
@@ -77,62 +99,56 @@ namespace Garage2._6.Models
             return View(vehicle);
         }
 
-        // GET: ParkedVehicles/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ParkedVehicle parkedVehicle = db.ParkedVehicles.Find(id);
-            if (parkedVehicle == null)
-            {
-                return HttpNotFound();
-            }
-            return View(parkedVehicle);
-        }
 
-        // POST: ParkedVehicles/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RegNr,Brand,Color,NumberofWheels,CheckIn,")] ParkedVehicle parkedVehicle)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(parkedVehicle).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(parkedVehicle);
-        }
+
 
         // GET: ParkedVehicles/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult CheckOut(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("overview");
             }
-            ParkedVehicle parkedVehicle = db.ParkedVehicles.Find(id);
-            if (parkedVehicle == null)
+
+            ParkedVehicle v = db.ParkedVehicles.Find(id);
+
+            if (v == null)
+            {
+                return RedirectToAction("overview");
+            }
+
+            CheckOutVehicle parkedVehicle = new CheckOutVehicle(v.Id, v.RegNr, v.CheckIn, DateTime.Now);
+            if (v == null)
             {
                 return HttpNotFound();
             }
             return View(parkedVehicle);
+
         }
 
         // POST: ParkedVehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+
+
+        public ActionResult VehicleReceipt(int id)
         {
-            ParkedVehicle parkedVehicle = db.ParkedVehicles.Find(id);
-            db.ParkedVehicles.Remove(parkedVehicle);
+            ParkedVehicle v = db.ParkedVehicles.Find(id);
+
+            if (v == null)
+            {
+                return HttpNotFound();
+            }
+
+            db.ParkedVehicles.Remove(v);
+
             db.SaveChanges();
-            return RedirectToAction("Overview");
+
+            ReceiptViewModel info = new ReceiptViewModel(v.Id, v.RegNr,v.CheckIn, DateTime.Now);
+
+            return View(info);
         }
+
 
         protected override void Dispose(bool disposing)
         {
@@ -142,5 +158,15 @@ namespace Garage2._6.Models
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public ActionResult Search(string search)
+        {
+
+            var result = db.ParkedVehicles.Where(e => e.RegNr.Contains(search)); //|| e.Color.Contains(search));
+
+            return View("overview", result);
+        }
+
     }
 }

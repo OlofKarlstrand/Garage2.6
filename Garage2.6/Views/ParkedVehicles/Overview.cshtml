@@ -1,14 +1,24 @@
 ﻿@model IEnumerable<Garage2._6.Models.ParkedVehicle>
 
-@{
-    ViewBag.Title = "Overview";
-}
+<br />
 
 <h2>Overview</h2>
 
 <p>
     @Html.ActionLink("Park a Vehicle", "Park")
 </p>
+
+@using (Html.BeginForm("Search", "ParkedVehicles", FormMethod.Post))
+{
+    <form method="post" action="overview">
+        @Html.TextBox("search")
+        <button class="btn btn-default" type="submit" value="search"><i class="glyphicon glyphicon-search"></i></button>
+
+    </form>
+}
+
+
+
 <table class="table">
     <tr>
         <th>
@@ -16,13 +26,13 @@
         </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.DisplayNameFor(model => model.DropType)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
 
-   
+
 
         <th>
             @Html.DisplayNameFor(model => model.CheckIn)
@@ -30,28 +40,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegNr)
-        </td>
-        <td>
-           @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DropType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
 
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckIn)
-        </td>
-        <td>
-     
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Check Out", "Delete", new { id = item.Id })
-        </td>
-    </tr>
-}
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckIn)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("CheckOut", "CheckOut", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
