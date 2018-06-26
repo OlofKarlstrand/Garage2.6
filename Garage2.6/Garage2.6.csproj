@@ -233,11 +233,51 @@
     <Compile Include="Migrations\201806251657174_co.Designer.cs">
       <DependentUpon>201806251657174_co.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806251741381_rec.cs" />
+    <Compile Include="Migrations\201806251741381_rec.Designer.cs">
+      <DependentUpon>201806251741381_rec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251758063_rec2.cs" />
+    <Compile Include="Migrations\201806251758063_rec2.Designer.cs">
+      <DependentUpon>201806251758063_rec2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251838309_late.cs" />
+    <Compile Include="Migrations\201806251838309_late.Designer.cs">
+      <DependentUpon>201806251838309_late.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251841588_late2.cs" />
+    <Compile Include="Migrations\201806251841588_late2.Designer.cs">
+      <DependentUpon>201806251841588_late2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251914456_lateer.cs" />
+    <Compile Include="Migrations\201806251914456_lateer.Designer.cs">
+      <DependentUpon>201806251914456_lateer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251928557_check.cs" />
+    <Compile Include="Migrations\201806251928557_check.Designer.cs">
+      <DependentUpon>201806251928557_check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251931415_lasttry.cs" />
+    <Compile Include="Migrations\201806251931415_lasttry.Designer.cs">
+      <DependentUpon>201806251931415_lasttry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806260852081_newmodel.cs" />
+    <Compile Include="Migrations\201806260852081_newmodel.Designer.cs">
+      <DependentUpon>201806260852081_newmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806260924433_receiptfin.cs" />
+    <Compile Include="Migrations\201806260924433_receiptfin.Designer.cs">
+      <DependentUpon>201806260924433_receiptfin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806260931289_vt.cs" />
+    <Compile Include="Migrations\201806260931289_vt.Designer.cs">
+      <DependentUpon>201806260931289_vt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\CheckOutVehicle.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
     <Compile Include="Models\ReceiptViewModel.cs" />
+    <Compile Include="Models\VehicleReceipt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -280,7 +320,7 @@
     <Content Include="Views\ParkedVehicles\Overview.cshtml" />
     <Content Include="Views\ParkedVehicles\Park.cshtml" />
     <Content Include="Views\ParkedVehicles\CheckOut.cshtml" />
-    <Content Include="Views\ParkedVehicles\VehicleReceipt.cshtml" />
+    <Content Include="Views\ParkedVehicles\receipt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +398,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806251657174_co.resx">
       <DependentUpon>201806251657174_co.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251741381_rec.resx">
+      <DependentUpon>201806251741381_rec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251758063_rec2.resx">
+      <DependentUpon>201806251758063_rec2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251838309_late.resx">
+      <DependentUpon>201806251838309_late.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251841588_late2.resx">
+      <DependentUpon>201806251841588_late2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251914456_lateer.resx">
+      <DependentUpon>201806251914456_lateer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251928557_check.resx">
+      <DependentUpon>201806251928557_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251931415_lasttry.resx">
+      <DependentUpon>201806251931415_lasttry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260852081_newmodel.resx">
+      <DependentUpon>201806260852081_newmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260924433_receiptfin.resx">
+      <DependentUpon>201806260924433_receiptfin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806260931289_vt.resx">
+      <DependentUpon>201806260931289_vt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

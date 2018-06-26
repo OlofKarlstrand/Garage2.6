@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Garage2._6.DataAccessLayer;
+using Garage2._6.Models;
 
 namespace Garage2._6.Models
 {
@@ -103,6 +104,7 @@ namespace Garage2._6.Models
 
 
         // GET: ParkedVehicles/Delete/5
+        [HttpGet]
         public ActionResult CheckOut(int? id)
         {
             if (id == null)
@@ -117,7 +119,7 @@ namespace Garage2._6.Models
                 return RedirectToAction("overview");
             }
 
-            CheckOutVehicle parkedVehicle = new CheckOutVehicle(v.Id, v.RegNr, v.CheckIn, DateTime.Now);
+            ReceiptViewModel parkedVehicle = new ReceiptViewModel(v.Id, v.RegNr, v.CheckIn, DateTime.Now);
             if (v == null)
             {
                 return HttpNotFound();
@@ -127,11 +129,11 @@ namespace Garage2._6.Models
         }
 
         // POST: ParkedVehicles/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
 
 
-        public ActionResult VehicleReceipt(int id)
+        public ActionResult Receipt(int id)
         {
             ParkedVehicle v = db.ParkedVehicles.Find(id);
 
@@ -139,12 +141,10 @@ namespace Garage2._6.Models
             {
                 return HttpNotFound();
             }
-
             db.ParkedVehicles.Remove(v);
-
             db.SaveChanges();
 
-            ReceiptViewModel info = new ReceiptViewModel(v.Id, v.RegNr,v.CheckIn, DateTime.Now);
+            VehicleReceipt info = new VehicleReceipt(v.Id, v.RegNr, v.CheckIn, DateTime.Now);
 
             return View(info);
         }

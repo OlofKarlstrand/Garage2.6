@@ -4,12 +4,11 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace Garage2._6.Models
 {
-    public class ReceiptViewModel
+    public class VehicleReceipt
     {
-        public ReceiptViewModel(int id,string regnr, DateTime checkIn, DateTime nowTime)
+        public VehicleReceipt(int id, string regnr, DateTime checkIn, DateTime nowTime)
         {
             Id = id;
             RegNr = regnr;
@@ -34,3 +33,4 @@ namespace Garage2._6.Models
         public double Price { get; private set; }
     }
 }
+   
