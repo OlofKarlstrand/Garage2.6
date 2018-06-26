@@ -24,7 +24,7 @@ namespace Garage2._6.Models
 
         public int Id { get; private set; }
         public string RegNr { get; private set; }
-        public string VehicleType { get; private set; }
+        public VehicleType VehicleType { get; private set; }
         [Display(Name = "Time Parked")]
         public DateTime CheckIn { get; private set; }
         [Display]

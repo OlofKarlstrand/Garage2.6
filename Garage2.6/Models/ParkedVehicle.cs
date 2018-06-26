@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Garage2._6.Models
 {
@@ -26,7 +27,15 @@ namespace Garage2._6.Models
         [DisplayName("Type of Vehicle")]
         public VehicleType DropType { get; set; }
 
-        
+        [ForeignKey("Member")]
+        public int MemberId { get; set; }
+
+        public virtual Member Member { get; set; }
+
+        //[ForeignKey("VehicleType")]
+        public int TypeId { get; set; }
+
+        public virtual VehicleType VehicleType { get; set; }
     }
 
   
