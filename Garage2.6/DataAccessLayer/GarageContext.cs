@@ -16,7 +16,7 @@ namespace Garage2._6.DataAccessLayer
 
         public DbSet<Garage2._6.Models.ParkedVehicle> ParkedVehicles { get; set; }
 
-        public DbSet<Garage2._6.Models.ReceiptViewModel> ReceiptViewModels { get; set; }
+        
 
        
     }

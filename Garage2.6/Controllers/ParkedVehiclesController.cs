@@ -18,25 +18,7 @@ namespace Garage2._6.Models
         // GET: ParkedVehicles
         public ActionResult Index(string sortOrder)
         {
-            var parkedVehicle = db.ParkedVehicles.ToList();
-
-            //if (sortOrder == "Ascending")
-            //{
-            //    parkedVehicle = parkedVehicle.OrderBy(s => s.Description).ToList();
-            //}
-
-            //else if (sortOrder == "Descending")
-            //{
-            //    parkedVehicle = parkedVehicle.OrderByDescending(s => s.Description).ToList();
-            //}
-
-            //List<ParkedVehicle> iv = new List<ParkedVehicle>();
-
-            //foreach (ParkedVehicle s in parkedVehicle)
-
-            //{
-            //    db.ParkedVehicles.OrderBy(ParkedVehicle => s.RegNr).ToList(); 
-            //}
+            var parkedVehicle = db.ParkedVehicles.ToList();           
 
             return View(parkedVehicle.ToList());
         }
@@ -85,9 +67,7 @@ namespace Garage2._6.Models
                 NumberofEngines = parkedVehicle.NumberofEngines,
                 CheckIn = DateTime.Now,
                 DropType = parkedVehicle.DropType,
-
-
-
+                                
             };
 
             if (ModelState.IsValid)
@@ -100,9 +80,7 @@ namespace Garage2._6.Models
             return View(vehicle);
         }
 
-
-
-
+        
         // GET: ParkedVehicles/Delete/5
         [HttpGet]
         public ActionResult CheckOut(int? id)
