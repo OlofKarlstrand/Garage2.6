@@ -16,28 +16,29 @@ namespace Garage2._6.Models
         public string RegNr { get; set; }
         
         public string Description { get; set; }
+
         public string Color { get; set; }
         [DisplayName ("Number of Engines")]
         public int NumberofEngines { get; set; }
-        //public string Type { get; set; }
+
+       
+
         [UIHint("DateFormat")]
         [DisplayName ("Time Checked In")]
         public DateTime CheckIn { get; set; }
-        [DisplayName("Type of Vehicle")]
-        public VehicleType DropType { get; set; }
 
+
+
+        public int VehicleTypeId { get; set; }
+        [DisplayName("Type of Vehicle")]
+        public virtual VehicleType VehicleType { get; set; }
         
+        
+
+        public virtual Member Members { get; set; } 
+        public int MemberId { get; internal set; }
+
+       
     }
 
-  
-    
-        public enum VehicleType
-        {
-            Spacestation,
-            Spaceship,
-            Submarine,
-            AircraftTransporter,
-            Rocketplane,
-        }
-    
 }

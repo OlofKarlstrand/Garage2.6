@@ -16,9 +16,9 @@ namespace Garage2._6.Models
         private GarageContext db = new GarageContext();
 
         // GET: ParkedVehicles
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index()
         {
-            var parkedVehicle = db.ParkedVehicles.ToList();           
+            var parkedVehicle = db.ParkedVehicles.ToList();
 
             return View(parkedVehicle.ToList());
         }
@@ -47,15 +47,20 @@ namespace Garage2._6.Models
         // GET: ParkedVehicles/Create
         public ActionResult Park()
         {
-            return View();
-        }
+            var model = new ParkedViewModel()
+            {
+                Types = db.VehicleType,
+                Members = db.Members
+            };
 
+            return View(model);
+        }
         // POST: ParkedVehicles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Park([Bind(Include = "RegNr,Description,Color,NumberofEngines,CheckIn,DropType")] ParkedVehicle parkedVehicle)
+        public ActionResult Park([Bind(Include = "RegNr,Description,Color,NumberofEngines,CheckIn,TypeName,MemberId")] ParkedViewModel parkedVehicle)
         {
 
             ParkedVehicle vehicle = new ParkedVehicle()
@@ -66,8 +71,10 @@ namespace Garage2._6.Models
                 Color = parkedVehicle.Color,
                 NumberofEngines = parkedVehicle.NumberofEngines,
                 CheckIn = DateTime.Now,
-                DropType = parkedVehicle.DropType,
-                                
+                //TypeName = parkedVehicle.TypeName,
+                MemberId = parkedVehicle.MemberId,
+
+
             };
 
             if (ModelState.IsValid)
@@ -80,7 +87,7 @@ namespace Garage2._6.Models
             return View(vehicle);
         }
 
-        
+
         // GET: ParkedVehicles/Delete/5
         [HttpGet]
         public ActionResult CheckOut(int? id)
@@ -97,7 +104,7 @@ namespace Garage2._6.Models
                 return RedirectToAction("overview");
             }
 
-            ReceiptViewModel parkedVehicle = new ReceiptViewModel(v.Id, v.RegNr, v.CheckIn, DateTime.Now);
+            ReceiptViewModel parkedVehicle = new ReceiptViewModel(v.Id, v.RegNr, v.VehicleType, v.CheckIn, DateTime.Now);
             if (v == null)
             {
                 return HttpNotFound();

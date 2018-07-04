@@ -9,11 +9,11 @@ namespace Garage2._6.Models
 {
     public class ReceiptViewModel
     {
-        public ReceiptViewModel(int id,string regnr, DateTime checkIn, DateTime nowTime)
+        public ReceiptViewModel(int id,string regnr, VehicleType vehicleType, DateTime checkIn, DateTime nowTime)
         {
             Id = id;
             RegNr = regnr;
-            //VehicleType = vehicleType;
+            VehicleType = vehicleType;
             CheckIn = checkIn;
             NowTime = nowTime;
             TimeSpan ts = NowTime - CheckIn;
@@ -25,7 +25,7 @@ namespace Garage2._6.Models
 
         public int Id { get; private set; }
         public string RegNr { get; private set; }
-        public string VehicleType { get; private set; }
+        public virtual VehicleType VehicleType { get; private set; }
         [Display(Name = "Time Parked")]
         public DateTime CheckIn { get; private set; }
         [Display]

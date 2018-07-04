@@ -148,21 +148,27 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="DataAccessLayer\GarageContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807011043401_thirdone.cs" />
-    <Compile Include="Migrations\201807011043401_thirdone.Designer.cs">
-      <DependentUpon>201807011043401_thirdone.cs</DependentUpon>
+    <Compile Include="Migrations\201807041437334_thirdinit36.cs" />
+    <Compile Include="Migrations\201807041437334_thirdinit36.Designer.cs">
+      <DependentUpon>201807041437334_thirdinit36.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807041517017_thirdinit38.cs" />
+    <Compile Include="Migrations\201807041517017_thirdinit38.Designer.cs">
+      <DependentUpon>201807041517017_thirdinit38.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\ParkedVehicle.cs" />
     <Compile Include="Controllers\ParkedVehiclesController.cs" />
+    <Compile Include="Models\ParkedViewModel.cs" />
     <Compile Include="Models\ReceiptViewModel.cs" />
     <Compile Include="Models\VehicleReceipt.cs" />
+    <Compile Include="Models\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,13 +205,17 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\Details.cshtml" />
     <Content Include="Views\ParkedVehicles\Index.cshtml" />
     <Content Include="Views\ParkedVehicles\Overview.cshtml" />
     <Content Include="Views\ParkedVehicles\Park.cshtml" />
     <Content Include="Views\ParkedVehicles\CheckOut.cshtml" />
     <Content Include="Views\ParkedVehicles\receipt.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,8 +234,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807011043401_thirdone.resx">
-      <DependentUpon>201807011043401_thirdone.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807041437334_thirdinit36.resx">
+      <DependentUpon>201807041437334_thirdinit36.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807041517017_thirdinit38.resx">
+      <DependentUpon>201807041517017_thirdinit38.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,6 +12,9 @@
             @Html.DisplayNameFor(model => model.RegNr)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Members.FirstName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
       
@@ -23,7 +26,7 @@
         </th>
         
 
-        <th>@Html.DisplayNameFor(model => model.DropType)</th>
+        <th>@Html.DisplayNameFor(model => model.VehicleType)</th>
         <th>
             @Html.DisplayNameFor(model => model.CheckIn)
         </th>
@@ -36,6 +39,9 @@
             @Html.DisplayFor(modelItem => item.RegNr)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Members.FirstName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
@@ -45,7 +51,7 @@
             @Html.DisplayFor(modelItem => item.NumberofEngines)
         </td>
         
-        <td>@Html.DisplayFor(modelItem=> item.DropType)</td>
+        <td>@Html.DisplayFor(modelItem=> item.VehicleType.TypeName)</td>
         <td>
             @Html.DisplayFor(modelItem => item.CheckIn)
         </td>
