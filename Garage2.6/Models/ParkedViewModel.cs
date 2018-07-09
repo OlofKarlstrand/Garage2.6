@@ -11,23 +11,24 @@ namespace Garage2._6.Models
     {
 
         public int Id { get; set; }
-        [DisplayName("Type of Vehicle")]
-        public VehicleType VehicleType { get; set; }
         public string RegNr { get; set; }
         public string Color { get; set; }
         public string Description { get; set; }
         public int NumberofEngines { get; set; }
+        [Required]
         [DisplayName("Owner")]
         public int MemberId { get; set; }
-        public int TypeName { get; set; }
-
-        public int VehicleTypeId { get; set; }
-
+        //public string TypeName { get; set; }
+        public VehicleType TypeName { get; set; }
+        [DisplayName("Type of Vehicle")]
+        public VehicleType VehicleType { get; set; }
+        
+       
         public IEnumerable<Member> Members { get; set; }
         public IEnumerable<VehicleType> Types { get; set; }
 
-        [UIHint("DateFormat")]
-        [DisplayName("Time Checked In")]
-        public DateTime CheckIn { get; set; }
+        //[UIHint("DateFormat")]
+        //[DisplayName("Time Checked In")]
+        //public DateTime CheckIn { get; set; }
     }
 }

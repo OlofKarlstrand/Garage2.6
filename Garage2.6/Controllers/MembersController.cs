@@ -18,10 +18,10 @@ namespace Garage2._6.Controllers
         // GET: Members
         public ActionResult Index()
         {
-            
-            return View(db.ParkedVehicles.ToList());
+            return View(db.Members.ToList());
         }
-
+        
+   
         // GET: Members/Details/5
         public ActionResult Details(int? id)
         {
@@ -40,7 +40,12 @@ namespace Garage2._6.Controllers
         // GET: Members/Create
         public ActionResult Create()
         {
-            return View();
+            var model = new Member()
+            {
+                
+                 
+            };
+            return View(model);
         }
 
         // POST: Members/Create
@@ -48,13 +53,14 @@ namespace Garage2._6.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FirstName,LastName,Email")] Member member)
+        public ActionResult Create([Bind(Include = "MemberId,FirstName,LastName,Email")] Member member)
         {
             if (ModelState.IsValid)
             {
                 db.Members.Add(member);
+
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = member.MemberId });
             }
 
             return View(member);
@@ -124,6 +130,21 @@ namespace Garage2._6.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [HttpPost]
+        public ActionResult Search(string search)
+        {
+
+            var result = db.Members.Where(e => e.FirstName.Contains(search) || e.LastName.Contains(search));
+
+            return View("index", result);
+
+        }
+
+
+        public ActionResult Front()
+        {
+            return View();
         }
     }
 }

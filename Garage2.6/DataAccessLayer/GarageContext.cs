@@ -20,6 +20,5 @@ namespace Garage2._6.DataAccessLayer
 
         public DbSet<Models.VehicleType> VehicleType { get; set; }
 
-       
     }
 }

@@ -11,8 +11,7 @@ namespace Garage2._6.Models
 
         public string TypeName { get; set; }
 
-        public virtual IEnumerable<ParkedVehicle> ParkedVehicles { get; set; }
+        public virtual ICollection<ParkedVehicle> ParkedVehicles { get; set; }
 
-        public virtual IEnumerable<Member> Members { get; set; }
     }
 }

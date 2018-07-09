@@ -153,13 +153,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807041437334_thirdinit36.cs" />
-    <Compile Include="Migrations\201807041437334_thirdinit36.Designer.cs">
-      <DependentUpon>201807041437334_thirdinit36.cs</DependentUpon>
+    <Compile Include="Migrations\201807090342569_outoftime14.cs" />
+    <Compile Include="Migrations\201807090342569_outoftime14.Designer.cs">
+      <DependentUpon>201807090342569_outoftime14.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807041517017_thirdinit38.cs" />
-    <Compile Include="Migrations\201807041517017_thirdinit38.Designer.cs">
-      <DependentUpon>201807041517017_thirdinit38.cs</DependentUpon>
+    <Compile Include="Migrations\201807090352403_outoftime15.cs" />
+    <Compile Include="Migrations\201807090352403_outoftime15.Designer.cs">
+      <DependentUpon>201807090352403_outoftime15.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
@@ -216,6 +216,7 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\ParkedVehicles\Front.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -234,11 +235,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807041437334_thirdinit36.resx">
-      <DependentUpon>201807041437334_thirdinit36.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807090342569_outoftime14.resx">
+      <DependentUpon>201807090342569_outoftime14.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807041517017_thirdinit38.resx">
-      <DependentUpon>201807041517017_thirdinit38.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807090352403_outoftime15.resx">
+      <DependentUpon>201807090352403_outoftime15.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

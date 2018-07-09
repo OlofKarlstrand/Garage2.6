@@ -1,57 +1,57 @@
-﻿@model IEnumerable<Garage2._6.Models.ParkedVehicle>
+﻿@model IEnumerable<Garage2._6.Models.Member>
 
 <br>
 
-<h2>Index</h2>
+<h2>Members</h2>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Join IR", "Create") 
 </p>
+
+@using (Html.BeginForm("Search", "Members", FormMethod.Post))
+{
+    <form method="post" action="overview">
+        @Html.TextBox("search")
+        <button class="btn btn-default" type="submit" value="search"><i class="glyphicon glyphicon-search"></i></button><p>Search on first or last name</p>
+
+    </form>
+}
 <table class="table">
     <tr>
+
         <th>
-            @Html.DisplayNameFor(model => model.VehicleType)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.Members.FirstName)
+            @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Members.LastName)
+            @Html.DisplayNameFor(model => model.LastName)
         </th>
+     
+
         <th>
-            @Html.DisplayNameFor(model => model.RegNr)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Members.Email)
+            @Html.DisplayNameFor(model => model.Email)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.VehicleType.TypeName)
-        </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.Members.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Members.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegNr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Members.Email)
-        </td>
-        <td>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
          
-           
-           
-        </td>
-    </tr>
-}
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.MemberId }) 
+            </td>
+        </tr>
+    }
 
 </table>

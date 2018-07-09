@@ -26,7 +26,8 @@ namespace Garage2._6.Migrations
                 new Member () {FirstName ="John", LastName ="Tracy", Email ="John@IR.com"},
                 new Member () {FirstName ="Virgil", LastName ="Tracy", Email ="Virgil@IR.com"},
                 new Member () {FirstName ="Gordon", LastName ="Tracy", Email = "Gordon@IR.com"},
-                new Member () {FirstName ="Alan", LastName ="Tracy", Email="Tracy@IR.com",}
+                new Member () {FirstName ="Alan", LastName ="Tracy", Email="Tracy@IR.com"},
+                
 
         };
 
