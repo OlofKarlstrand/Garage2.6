@@ -59,7 +59,7 @@ namespace Garage2._6.Migrations
                     NumberofEngines = 4,
                     CheckIn = DateTime.Now,
                     MemberId = members[0].MemberId,
-                    VehicleTypeId = types[4].Id,
+                    VehicleTypeId = types[4].VehicleTypeId,
 
 
                 },
@@ -73,7 +73,7 @@ namespace Garage2._6.Migrations
                     NumberofEngines = 8,
                     CheckIn = DateTime.Now,
                     MemberId= members[2].MemberId,
-                    VehicleTypeId = types[3].Id,
+                    VehicleTypeId = types[3].VehicleTypeId,
 
                 },
 
@@ -85,7 +85,7 @@ namespace Garage2._6.Migrations
                     NumberofEngines = 12,
                     CheckIn = DateTime.Now,
                     MemberId = members[4].MemberId,
-                    VehicleTypeId = types[1].Id,
+                    VehicleTypeId = types[1].VehicleTypeId,
                 },
                 new ParkedVehicle()
                 {
@@ -95,7 +95,7 @@ namespace Garage2._6.Migrations
                     NumberofEngines = 8,
                     CheckIn = DateTime.Now,
                     MemberId = members[3].MemberId,
-                    VehicleTypeId = types[2].Id,
+                    VehicleTypeId = types[2].VehicleTypeId,
 
                 },
                 new ParkedVehicle ()
@@ -106,7 +106,7 @@ namespace Garage2._6.Migrations
                     NumberofEngines = 20,
                     CheckIn = DateTime.Now,
                     MemberId = members[1].MemberId,
-                    VehicleTypeId = types[0].Id
+                    VehicleTypeId = types[0].VehicleTypeId
 
                 }
             };

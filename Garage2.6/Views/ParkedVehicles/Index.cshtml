@@ -29,10 +29,13 @@
         </th>
         
 
-        <th>@Html.DisplayNameFor(model => model.VehicleType.TypeName)</th>
+        <th>@Html.DisplayNameFor(model => model.VehicleType)</th>
       
         <th>
             @Html.DisplayNameFor(model => model.CheckIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberId)
         </th>
        
         <th></th>
@@ -63,6 +66,9 @@
        
         <td>
             @Html.DisplayFor(modelItem => item.CheckIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberId)
         </td>
 
       

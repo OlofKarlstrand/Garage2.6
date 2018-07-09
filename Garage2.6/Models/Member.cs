@@ -25,7 +25,6 @@ namespace Garage2._6.Models
         public virtual VehicleType VehicleType { get; set; }
 
 
-        public int? VehicleTypeId { get; set; }
 
 
 

@@ -60,11 +60,11 @@ namespace Garage2._6.Models
         [ValidateAntiForgeryToken]
         public ActionResult Park([Bind(Include = "Id,RegNr,Description,Color,NumberofEngines,VehicleType,VehicleTypeId,MemberId")] ParkedVehicle parkedVehicle)
         {
-            
+
             var vehicle = new ParkedVehicle()
 
             {
-               
+                Id = parkedVehicle.Id,
                 RegNr = parkedVehicle.RegNr,
                 Description = parkedVehicle.Description,
                 Color = parkedVehicle.Color,
@@ -77,9 +77,9 @@ namespace Garage2._6.Models
 
             if (ModelState.IsValid)
             {
-                db.ParkedVehicles.Add(vehicle);
+                db.ParkedVehicles.Attach(new ParkedVehicle());
                 db.SaveChanges();
-                return View("Index");
+                return View("Index", new ParkedVehicle());
             }
 
             return View("Index");

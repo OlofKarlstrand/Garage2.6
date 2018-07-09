@@ -153,13 +153,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807090342569_outoftime14.cs" />
-    <Compile Include="Migrations\201807090342569_outoftime14.Designer.cs">
-      <DependentUpon>201807090342569_outoftime14.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807090352403_outoftime15.cs" />
-    <Compile Include="Migrations\201807090352403_outoftime15.Designer.cs">
-      <DependentUpon>201807090352403_outoftime15.cs</DependentUpon>
+    <Compile Include="Migrations\201807091355217_pres32.cs" />
+    <Compile Include="Migrations\201807091355217_pres32.Designer.cs">
+      <DependentUpon>201807091355217_pres32.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Member.cs" />
@@ -235,11 +231,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807090342569_outoftime14.resx">
-      <DependentUpon>201807090342569_outoftime14.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807090352403_outoftime15.resx">
-      <DependentUpon>201807090352403_outoftime15.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807091355217_pres32.resx">
+      <DependentUpon>201807091355217_pres32.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
