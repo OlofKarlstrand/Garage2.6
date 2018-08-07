@@ -18,6 +18,7 @@ namespace Garage2._6.Models
         // GET: ParkedVehicles
         public ActionResult Index()
         {
+            
             return View(db.ParkedVehicles.ToList());
         }
 
@@ -45,7 +46,7 @@ namespace Garage2._6.Models
         // GET: ParkedVehicles/Create
         public ActionResult Park()
         {
-            var model = new ParkedVehicle()
+            var model = new ParkedViewModel()
             {
                 Types = db.VehicleType,
                 ListMembers = db.Members,
@@ -58,31 +59,35 @@ namespace Garage2._6.Models
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Park([Bind(Include = "Id,RegNr,Description,Color,NumberofEngines,VehicleType,VehicleTypeId,MemberId")] ParkedVehicle parkedVehicle)
+        public ActionResult Park([Bind(Include = "Id,RegNr,Description,Color,NumberofEngines,CheckIn,VehicleType,VehicleTypeId,MemberId")] ParkedVehicle parkedVehicle)
         {
 
-            var vehicle = new ParkedVehicle()
-
-            {
-                Id = parkedVehicle.Id,
-                RegNr = parkedVehicle.RegNr,
-                Description = parkedVehicle.Description,
-                Color = parkedVehicle.Color,
-                NumberofEngines = parkedVehicle.NumberofEngines,
-                VehicleType = parkedVehicle.VehicleType,
-                VehicleTypeId = parkedVehicle.VehicleTypeId,
-                MemberId = parkedVehicle.MemberId,
-            };
 
 
             if (ModelState.IsValid)
             {
-                db.ParkedVehicles.Attach(new ParkedVehicle());
+
+                var vehicle = new ParkedVehicle()
+
+                {
+                    //Id= parkedVehicle.Id,
+                    RegNr = parkedVehicle.RegNr,
+                    Description = parkedVehicle.Description,
+                    Color = parkedVehicle.Color,
+                    NumberofEngines = parkedVehicle.NumberofEngines,
+                    CheckIn = DateTime.Now,
+                    VehicleType = parkedVehicle.VehicleType,
+                    VehicleTypeId = parkedVehicle.VehicleTypeId,
+                    MemberId = parkedVehicle.MemberId,
+                };
+
+
+                db.ParkedVehicles.Add(vehicle);
                 db.SaveChanges();
-                return View("Index", new ParkedVehicle());
+                return RedirectToAction("Index");
             }
 
-            return View("Index");
+            return View(parkedVehicle);
         }
 
 
@@ -147,7 +152,7 @@ namespace Garage2._6.Models
         {
 
             var result = db.ParkedVehicles.Where(e => e.RegNr.Contains(search));// || db.VehicleType.Where(e => e.VehicleTypes.TypeName.e(search));
-           
+
             return View("overview", result);
         }
         public ActionResult Front()

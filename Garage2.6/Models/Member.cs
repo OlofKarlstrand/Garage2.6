@@ -9,7 +9,7 @@ namespace Garage2._6.Models
 {
     public class Member
     {
-        public int MemberId { get; set; }
+        public int Id { get; set; }
         [DisplayName("Pilot First Name")]
         
         public string FirstName { get; set; }
@@ -22,7 +22,8 @@ namespace Garage2._6.Models
 
         public virtual ICollection<ParkedVehicle> ParkedVehicles { get; set; }
 
-        public virtual VehicleType VehicleType { get; set; }
+        //public virtual VehicleType VehicleType { get; set; }
+       
 
 
 

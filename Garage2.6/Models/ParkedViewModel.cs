@@ -10,7 +10,7 @@ namespace Garage2._6.Models
     public class ParkedViewModel
     {
 
-        public int Id { get; set; }
+       // public int Id { get; set; }
         public string RegNr { get; set; }
         public string Color { get; set; }
         public string Description { get; set; }
@@ -19,12 +19,12 @@ namespace Garage2._6.Models
         [DisplayName("Owner")]
         public int MemberId { get; set; }
         //public string TypeName { get; set; }
-        public VehicleType TypeName { get; set; }
+        //public VehicleType TypeName { get; set; }
         [DisplayName("Type of Vehicle")]
         public VehicleType VehicleType { get; set; }
-        
+        public int VehicleTypeId { get; set; }
        
-        public IEnumerable<Member> Members { get; set; }
+        public IEnumerable<Member> ListMembers { get; set; }
         public IEnumerable<VehicleType> Types { get; set; }
 
         //[UIHint("DateFormat")]

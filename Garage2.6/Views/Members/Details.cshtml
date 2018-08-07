@@ -30,19 +30,19 @@
         <dd>
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.VehicleType)
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ParkedVehicle
         </dt>
         <dd>
             @Html.DisplayFor(model => model.VehicleType.TypeName)
-        </dd>
-      
-     
+        </dd>*@
+
+
     </dl>
 </div>
 
     <td>
-    @Html.ActionLink("Unsubscribe", "Delete", new { id = Model.MemberId }) ||
+    @Html.ActionLink("Unsubscribe", "Delete", new { id = Model.Id }) ||
     @Html.ActionLink("Back to List", "Index")
         </td>
 

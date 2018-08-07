@@ -4,75 +4,62 @@
 <h2>Full Index</h2>
 
 <p>
-    @Html.ActionLink("Park", "Park")
+    @Html.ActionLink("Park a Vehicle", "Park" )
 </p>
+
+
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.RegNr)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Members.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Members.LastName)
+            @Html.DisplayNameFor(model => model.Color)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
-      
-        <th>
-            @Html.DisplayNameFor(model => model.Color)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.NumberofEngines)
-        </th>
-        
-
-        <th>@Html.DisplayNameFor(model => model.VehicleType)</th>
-      
-        <th>
-            @Html.DisplayNameFor(model => model.CheckIn)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MemberId)
         </th>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleTypeId)
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegNr)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Members.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Members.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberofEngines)
-        </td>
-        
-        <td>@Html.DisplayFor(modelItem=> item.VehicleType.TypeName)</td>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckIn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MemberId)
-        </td>
-
-      
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberofEngines)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleTypeId)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.VehicleTypeId }) |*@
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+               @* @Html.ActionLink("CheckOut", "receipt", new { id = item.VehicleTypeId })*@
+            </td>
+        </tr>
+    }
 
 </table>
+

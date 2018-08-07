@@ -1,4 +1,4 @@
-﻿@model Garage2._6.Models.ParkedVehicle
+﻿@model Garage2._6.Models.ParkedViewModel
 
 
 <br />
@@ -51,15 +51,15 @@
             @Html.LabelFor(model => model.VehicleType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.ValidationMessageFor(model => model.VehicleType, "", new { @class = "text-danger" })
-                @Html.DropDownListFor(model => model.Types, new SelectList(Model.Types, "ParkedVehicles", "TypeName"), new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.VehicleTypeId, new SelectList(Model.Types, "VehicleTypeId", "TypeName"), new { @class = "form-control" })
             </div>
         </div><br />
         <br />
         <div>
-            @Html.LabelFor(model => model.Members, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ListMembers, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.ValidationMessageFor(model => model.Members, "", new { @class = "text-danger" })
-                @Html.DropDownListFor(model => model.Members, new SelectList(Model.ListMembers, "MemberId", "FirstName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ListMembers, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.MemberId, new SelectList(Model.ListMembers, "Id", "FirstName"), new { @class = "form-control" })
             </div>
         </div><br />
 
@@ -74,7 +74,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Overview")
 </div>
 
 @section Scripts {

@@ -37,17 +37,17 @@ namespace Garage2._6.Models
 
         [DisplayName("Type of Vehicle")]
         public virtual VehicleType VehicleType { get; set; }
-
         public int VehicleTypeId { get; set; }
+        
         
         public virtual Member Members { get; set; }
         public int MemberId { get; set; }
 
 
         //public virtual IEnumerable<Member> Members { get; set; }
-        public IEnumerable<VehicleType> Types { get; set; }
+        //public IEnumerable<VehicleType> Types { get; set; }
 
-        public IEnumerable<Member> ListMembers { get; set; }
+        //public IEnumerable<Member> ListMembers { get; set; }
     
 
 

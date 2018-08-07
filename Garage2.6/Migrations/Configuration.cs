@@ -11,7 +11,7 @@ namespace Garage2._6.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Garage2._6.DataAccessLayer.GarageContext";
+           // ContextKey = "Garage2._6.DataAccessLayer.GarageContext";
         }
 
         protected override void Seed(Garage2._6.DataAccessLayer.GarageContext context)
@@ -58,7 +58,7 @@ namespace Garage2._6.Migrations
                     Color = "Silver",
                     NumberofEngines = 4,
                     CheckIn = DateTime.Now,
-                    MemberId = members[0].MemberId,
+                    MemberId = members[0].Id,
                     VehicleTypeId = types[4].VehicleTypeId,
 
 
@@ -72,7 +72,7 @@ namespace Garage2._6.Migrations
                     Color = "Blue",
                     NumberofEngines = 8,
                     CheckIn = DateTime.Now,
-                    MemberId= members[2].MemberId,
+                    MemberId= members[2].Id,
                     VehicleTypeId = types[3].VehicleTypeId,
 
                 },
@@ -84,7 +84,7 @@ namespace Garage2._6.Migrations
                     Color = "Green",
                     NumberofEngines = 12,
                     CheckIn = DateTime.Now,
-                    MemberId = members[4].MemberId,
+                    MemberId = members[4].Id,
                     VehicleTypeId = types[1].VehicleTypeId,
                 },
                 new ParkedVehicle()
@@ -94,7 +94,7 @@ namespace Garage2._6.Migrations
                     Color = "Yellow",
                     NumberofEngines = 8,
                     CheckIn = DateTime.Now,
-                    MemberId = members[3].MemberId,
+                    MemberId = members[3].Id,
                     VehicleTypeId = types[2].VehicleTypeId,
 
                 },
@@ -105,7 +105,7 @@ namespace Garage2._6.Migrations
                     Color = "Purple",
                     NumberofEngines = 20,
                     CheckIn = DateTime.Now,
-                    MemberId = members[1].MemberId,
+                    MemberId = members[1].Id,
                     VehicleTypeId = types[0].VehicleTypeId
 
                 }

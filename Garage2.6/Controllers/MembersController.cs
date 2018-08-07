@@ -60,7 +60,7 @@ namespace Garage2._6.Controllers
                 db.Members.Add(member);
 
                 db.SaveChanges();
-                return RedirectToAction("Index", new { id = member.MemberId });
+                return RedirectToAction("Index", new { id = member.Id });
             }
 
             return View(member);
